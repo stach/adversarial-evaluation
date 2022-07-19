@@ -1,0 +1,7 @@
+cleverhans==4.0.0
+imageio==2.18.0
+tensorflow==2.8.0
+keras==2.8.0
+numpy==1.21.6
+wget==3.2
+matplotlib==3.5.1

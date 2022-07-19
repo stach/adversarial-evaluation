@@ -1,0 +1,57 @@
+###
+Model: target
+Epochs: 5
+Epochs time: [144, 133, 133, 132, 132]
+Mean epoch time: 134.8
+###
+Model: substitute
+Epochs: 3
+Epochs time: [140, 132, 133]
+Mean epoch time: 135.0
+###
+Model: adversarial_training
+Epochs: 4
+Epochs time: [401, 374, 373, 373]
+Mean epoch time: 380.25
+###
+Model: adversarial_training_with_sampling
+Epochs: 4
+Epochs time: [412, 377, 374, 375]
+Mean epoch time: 384.5
+###
+Model: madry_e8_n10
+Epochs: 5
+Epochs time: [1228, 1155, 1157, 1156, 1155]
+Mean epoch time: 1170.2
+###
+Model: madry_e16_n20
+Epochs: 7
+Epochs time: [2127, 2014, 2014, 2014, 2015, 2015, 2013]
+Mean epoch time: 2030.2857142857142
+###
+Model: seiler_lambda0
+Epochs: 3
+Epochs time: [725, 712, 710]
+Mean epoch time: 715.6666666666666
+###
+Model: seiler_lambda10
+Epochs: 7
+Epochs time: [733, 712, 711, 711, 712, 712, 712]
+Mean epoch time: 714.7142857142857
+###
+Model: defensive_distillation_init
+Epochs: 1
+Epochs time: [141]
+Mean epoch time: 141.0
+###
+Model: defensive_distillation_teacher
+Epochs: 4
+Epochs time: [139, 130, 130, 129]
+Mean epoch time: 132.0
+###
+Model: defensive_distillation
+Epochs: 5
+Epochs time: [142, 131, 132, 130, 130]
+Mean epoch time: 133.0
+
+
