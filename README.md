@@ -72,7 +72,7 @@ This project includes a digital version of the bachelor's thesis "Application of
 * All modules "attack_*.py" implement an attack.
 * All modules "training_*.py" train a model (with defense).
 * "data<span>.py" transforms /tiny-imagenet-200/ into a format usable for the evaluation.
-* "time.txt" stores the tranining time for the different models.
+* "time.txt" stores the training time for the different models.
 * The thesis is available in digital form in "Thesis.pdf".
 
  
