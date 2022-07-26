@@ -1,3 +1,5 @@
+# --- Dependencies
+
 # Tensorfow 
 import tensorflow as tf
 import tensorflow.keras as keras
@@ -20,13 +22,6 @@ from cleverhans.tf2.attacks.fast_gradient_method import fast_gradient_method
     Paper: Explaining and Harnessing Adversarial Examples
     Author: Ian J. Goodfellow, Jonathon Shlens, Christian Szegedy
     Published: 2014
-    ---
-    Parameters to run: {
-        norm = Linf 
-        eps  = [16]
-        alpha = 0.5
-        (Clip_min, Clip_max) = [0,255] 
-    }
 """ 
 
 class AdversarialTrainingGenerator:
@@ -82,7 +77,7 @@ class AdversarialTrainingGenerator:
 
         # Performs a training step on a batch
         @tf.function
-        def train_step(x, y):
+        def train_step(x, y, eps, eps_sample):
             with tf.GradientTape() as tape:
                 
                 if eps_sample:
@@ -120,7 +115,7 @@ class AdversarialTrainingGenerator:
             
             # training
             for (x, y) in training_dataset:
-                train_step(x, y)
+                train_step(x, y, eps, eps_sample)
                 progress_bar_train.add(x.shape[0], values=[("loss", train_loss.result()),("accuracy", train_accuracy.result())])
             
             epoch_end = time.time()
@@ -150,7 +145,8 @@ class AdversarialTrainingGenerator:
                 if(patience==0):
                     print("Training stopped!")
                     break
-                    
+        
+        # Save the time from start to end of training                
         file = open("time.txt", "a")
         file.write("###\n")
         file.write(f"Model: {name}\n")

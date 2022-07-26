@@ -1,3 +1,5 @@
+# --- Dependencies
+
 # Tensorfow 
 import tensorflow as tf
 import tensorflow.keras as keras
@@ -18,12 +20,6 @@ import time
     Paper: Enhancing Resilience of Deep Learning Networks by Means of Transferable Adversaries
     Author: Moritz Seiler, Heike Trautmann, Pascal Kerschke
     Published: 2020
-    ---
-    Parameters: {
-            loss = CE+KL_Div
-            self.l=10
-            self.a=0.3
-    }
 """ 
 
 class SeilerGenerator:
@@ -156,7 +152,8 @@ class SeilerGenerator:
                 if(patience==0):
                     print("Training stopped!")
                     break
-                    
+        
+        # Save the time from start to end of training    
         file = open("time.txt", "a")
         file.write("###\n")
         file.write(f"Model: {name}\n")

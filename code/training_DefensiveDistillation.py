@@ -1,3 +1,5 @@
+# --- Dependencies
+
 # Tensorfow 
 import tensorflow as tf
 import tensorflow.keras as keras
@@ -19,10 +21,6 @@ import numpy as np
     Paper: Distillation as a Defense to Adversarial Perturbations against Deep Neural Networks
     Author: Paper: Nicolas Papernot, Patrick McDaniel, Xi Wu, Somesh Jha, Ananthram Swami
     Published: 2016
-    ----
-    Parameters: {
-        tau=100
-        }
 """
 
 class DefensiveDistillationGenerator:
@@ -144,7 +142,8 @@ class DefensiveDistillationGenerator:
                 if(patience==0):
                     print("Training stopped!")
                     break
-                    
+        
+        # Save the time from start to end of training    
         file = open("time.txt", "a")
         file.write("###\n")
         file.write(f"Model: {file_name}\n")

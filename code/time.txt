@@ -53,5 +53,3 @@ Model: defensive_distillation
 Epochs: 5
 Epochs time: [142, 131, 132, 130, 130]
 Mean epoch time: 133.0
-
-

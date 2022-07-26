@@ -1,3 +1,5 @@
+# --- Dependencies
+
 # Tensorfow 
 import tensorflow as tf
 import tensorflow.keras as keras
@@ -18,10 +20,9 @@ from cleverhans.tf2.attacks.projected_gradient_descent import projected_gradient
     Generate an EfficientNetV2B3 model trained with Madry PGD adversarial training
     ---
     Paper: Towards Deep Learning Models Resistant to Adversarial
-    Author:
-    Published:
-    ---
-    Parameters: {}
+    Author: Madry et al.
+    Published: 2017
+
 """ 
 
 class MadryGenerator:
@@ -142,7 +143,8 @@ class MadryGenerator:
                 if(patience==0):
                     print("Training stopped!")
                     break
-                    
+        
+        # Save the time from start to end of training    
         file = open("time.txt", "a")
         file.write("###\n")
         file.write(f"Model: {name}\n")

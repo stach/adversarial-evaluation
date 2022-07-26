@@ -1,3 +1,5 @@
+# --- Dependencies
+
 # Tensorfow 
 import tensorflow as tf
 import tensorflow.keras as keras
@@ -7,12 +9,12 @@ from keras.callbacks import EarlyStopping
 from keras.callbacks import TensorBoard
 from keras.callbacks import ModelCheckpoint
 
+# NumPy and other
 import numpy as np
 import time
 
 """
     Generate an EfficientNetV2B3 base model 
-    ---
 """    
 
 class BaseModelGenerator:
@@ -115,7 +117,7 @@ class BaseModelGenerator:
             
             print("Validation accuracy ", val_accuracy.result().numpy(), " and loss ", val_loss.result().numpy())
             
-            # Feature #1 - Save model, if val loss improved
+            # Feature #1 - Save model, if validation loss improved (threshold 0.25)
             # Feature #2 - Early stopping (2 iterations without val loss improves)
             
             if(val_loss.result().numpy()<val_loss_prev+0.025):
@@ -130,6 +132,7 @@ class BaseModelGenerator:
                     print("Training stopped!")
                     break
                     
+        # Save the time from start to end of training            
         file = open("time.txt", "a")
         file.write("###\n")
         file.write(f"Model: {name}\n")

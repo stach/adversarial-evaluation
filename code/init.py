@@ -1,12 +1,18 @@
+# --- Dependencies
+
 import os
 import zipfile
 import wget
+
+
+# --- Init the Project
 
 
 # Execute initially to install packages with pip; download dataset from source
 class InitProject:
 
     def __init__(self):
+        # The source for the Tiny ImageNet dataset
         self.URL = "http://cs231n.stanford.edu/tiny-imagenet-200.zip"
 
     def installRequirements(self):
@@ -20,4 +26,4 @@ class InitProject:
             zip_ref.extractall(os.getcwd())
 
         # Remove zip
-        os.system("rm 'tiny-imagenet-200.zip'")
+        os.remove("tiny-imagenet-200.zip")
